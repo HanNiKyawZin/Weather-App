@@ -1,0 +1,499 @@
+/* =========================================
+   GLOBAL STYLES
+   Base styles for the entire app:
+   - Background color
+   - Default font family and color
+   - Minimum height
+   - Base spacing and padding
+   - Reset margin
+   ========================================= */
+body {
+    background-color: #22BF7D !important; /* Primary background color for app */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Default font stack */
+    color: white !important; /* Default text color */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 2rem; /* Page padding for spacing */
+}
+
+/* =========================================
+   HEADER STYLES
+   Layout for header, logo, search bar, and dark mode toggle:
+   - Flexbox for alignment
+   - Spacing and wrapping for responsive behavior
+   ========================================= */
+.app-header {
+    display: flex;
+    justify-content: space-between; /* Space between logo and search+toggle */
+    align-items: center; /* Vertically center items */
+    margin-bottom: 2rem; /* Spacing from main content */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 1rem; /* Gap between elements */
+}
+
+/* Logo container inside header */
+.app-header .logo {
+    display: flex; /* Horizontal alignment of icon and text */
+    align-items: center; /* Vertical alignment */
+    gap: 0.5rem; /* Space between cloud icon and text */
+    font-size: 1.5rem; /* Logo text size */
+    font-weight: 600; /* Semi-bold logo text */
+    user-select: none; /* Prevent text selection */
+}
+
+/* Cloud icon inside logo */
+.app-header .logo .cloud-icon {
+    width: 32px; /* Icon width */
+    height: 32px; /* Icon height */
+    object-fit: contain; /* Preserve aspect ratio */
+}
+
+/* =========================================
+   SEARCH BAR STYLES
+   Styles for input box and suggestions dropdown:
+   - Flex layout
+   - Max width for search bar
+   - Position relative for suggestions dropdown
+   ========================================= */
+.search-group {
+    flex-grow: 1; /* Take remaining horizontal space */
+    max-width: 400px; /* Prevent too wide search box */
+    display: flex;
+    gap: 0.5rem; /* Space between input and button */
+    position: relative; /* Required for absolute positioning of suggestions dropdown */
+}
+
+/* Input field styling */
+.form-control.search-input {
+    border-radius: 25px; /* Rounded search input */
+    background-color: #1a1a1a; /* Dark background */
+    border: none; /* Remove default border */
+    color: white; /* Text color */
+    padding-left: 1.5rem; /* Left padding for text inside input */
+    font-size: 1rem; /* Text size */
+    box-shadow: none; /* Remove shadow */
+}
+
+/* Focus state for input */
+.form-control.search-input:focus {
+    background-color: #1a1a1a; /* Maintain background on focus */
+    color: white;
+    box-shadow: none; /* Remove focus shadow */
+    outline: none; /* Remove default outline */
+}
+
+/* Placeholder text styling */
+.form-control.search-input::placeholder {
+    color: #b4b4b4; /* Grey placeholder color */
+    font-weight: 400; /* Regular weight */
+}
+
+/* =========================================
+   BUTTON STYLES
+   Styling for Current Location button and Dark Mode toggle:
+   - Backgrounds, hover effects, borders, radius, and shadows
+   ========================================= */
+
+/* Current location button */
+.btn-current-location {
+    background: linear-gradient(90deg, #2ecc40, #27ae60); /* Green gradient */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* Rounded pill button */
+    font-weight: 600;
+    color: white !important; /* Ensure text color is white */
+    padding: 0.5rem 1.3rem;
+    box-shadow: 0 4px 8px rgb(47 161 76 / 0.5); /* Shadow for 3D effect */
+    text-transform: none; /* Keep text case normal */
+    transition: background 0.25s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for current location button */
+.btn-current-location:hover {
+    background: linear-gradient(90deg, #2e8351, #2ecc40); /* Darker gradient on hover */
+    box-shadow: 0 6px 14px rgb(47 161 76 / 0.75); /* Slightly larger shadow */
+}
+
+/* Dark mode toggle button */
+.btn-darkmode-toggle {
+    background: none; /* Transparent background */
+    border: none; /* No border */
+    color: goldenrod; /* Icon color */
+    font-size: 1.25rem; /* Icon size */
+    cursor: pointer; /* Pointer cursor */
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    user-select: none;
+    transition: background 0.3s ease; /* Smooth hover */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Space between icon and text if any */
+}
+
+/* Hover effect for dark mode button */
+.btn-darkmode-toggle:hover {
+    background: rgba(255 255 255 / 0.2); /* Slight translucent background */
+}
+
+/* =========================================
+   MAIN TITLE
+   Central heading for app
+   ========================================= */
+.main-title {
+    text-align: center; /* Center text */
+    font-weight: 600;
+    font-size: 1.75rem; /* Title size */
+    margin-bottom: 1.5rem;
+    user-select: none;
+}
+
+/* =========================================
+   WEATHER CARD STYLES
+   Main weather info container
+   - Background, border radius, padding, shadows
+   - Flexbox layout for temperature and condition
+   ========================================= */
+.weather-card {
+    background-color: #1a1a1a; /* Card background */
+    border-radius: 24px;
+    max-width: 450px;
+    margin: 0 auto 2rem auto; /* Center card and add bottom spacing */
+    padding: 1.9rem 2.2rem 2.2rem;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.9); /* Dark shadow */
+    user-select: none;
+}
+
+/* Badge showing location */
+.location-badge {
+    background: #333;
+    border-radius: 12px;
+    color: #aaa;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.7rem;
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+    max-width: max-content;
+}
+
+/* Date and time display */
+.date-text {
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+}
+
+/* Container for weather info */
+.weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Left side info (condition, feels like, toggle) */
+.weather-info-left {
+    flex-grow: 1;
+}
+
+/* Weather condition text (e.g., Sunny, Rainy) */
+.day-text {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+/* Weather icon styling */
+.weather-icon {
+    width: 90px;
+    height: 90px;
+    filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.8)); /* Soft shadow */
+    user-select: none;
+    margin-bottom: 1rem;
+}
+
+/* Temperature container */
+.temp-container {
+    text-align: right;
+    user-select: none;
+}
+
+/* Current temperature text */
+.temp-current {
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Minimum temperature text */
+.temp-low {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-left: 0.25rem;
+    font-weight: 500;
+}
+
+/* Weather description text */
+.weather-description {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0.3rem;
+    user-select: none;
+}
+
+/* Feels like text */
+.feels-like {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-top: 0.2rem;
+    user-select: none;
+}
+
+/* Temperature toggle button */
+.temp-toggle {
+    background: #333;
+    border-radius: 12px;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    color: #ccc;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    user-select: none;
+}
+
+/* Hover effect for temp toggle */
+.temp-toggle:hover {
+    color: white;
+    background: #555;
+}
+
+/* =========================================
+   HIGHLIGHTS CARD
+   Displays additional weather info like wind, humidity, UV index
+   ========================================= */
+.highlights-card {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    border-radius: 24px;
+    padding: 1.8rem 2.2rem;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.9);
+    user-select: none;
+}
+
+/* Highlights section title */
+.highlights-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+    user-select: none;
+}
+
+/* Grid layout for highlight items */
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.1rem;
+}
+
+/* Individual highlight card */
+.highlight-item {
+    background: #333;
+    border-radius: 16px;
+    padding: 1rem;
+    color: #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    user-select: none;
+}
+
+/* Label with icon */
+.highlight-label {
+    font-size: 0.85rem;
+    color: #bbb;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Highlight value (e.g., wind speed) */
+.highlight-value {
+    font-weight: 700;
+    font-size: 1.3rem;
+    user-select: text; /* Allow copy */
+}
+
+/* Subtext (e.g., units or condition) */
+.highlight-subtext {
+    font-size: 0.75rem;
+    color: #999;
+    user-select: none;
+}
+
+/* Highlight icon */
+.highlight-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* =========================================
+   RESPONSIVE STYLES
+   Adjust layout for mobile devices
+   ========================================= */
+@media (max-width: 540px) {
+    .weather-card,
+    .highlights-card {
+        max-width: 100%; /* Full width on small screens */
+    }
+
+    .app-header {
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .search-group {
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   DARK MODE STYLES
+   Applied when body has class "dark-mode"
+   ========================================= */
+body.dark-mode {
+    background-color: #0A0909 !important; /* Dark background */
+    color: #e0e0e0;
+}
+
+body.dark-mode .weather-card,
+body.dark-mode .highlights-card {
+    background-color: #222; /* Dark card background */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .highlight-item {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .form-control.search-input {
+    background-color: #333;
+    color: #eee;
+}
+
+body.dark-mode .btn-darkmode-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
+   AUTO-SUGGEST DROPDOWN
+   Dropdown for city suggestions under search input
+   ========================================= */
+#suggestions {
+    position: absolute;
+    top: 100%; /* Directly below input */
+    left: 0;
+    right: 0;
+    z-index: 1050; /* On top of other content */
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 12px;
+    margin-top: 2px;
+    max-height: 200px; /* Scroll if many items */
+    overflow-y: auto;
+    padding: 0;
+    list-style: none;
+    width: 70%;
+}
+
+#suggestions .list-group-item {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+}
+
+#suggestions .list-group-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   WEATHER ICON STYLING
+   Floating animation, glow effect, background pulse
+   ========================================= */
+#weather-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+}
+
+#weather-icon img {
+    width: 80%;
+    height: 80%;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+/* Glow effect based on weather condition */
+#weather-icon.sunny img { filter: drop-shadow(0 0 15px #FFD700); }
+#weather-icon.cloudy img { filter: drop-shadow(0 0 10px #999); }
+#weather-icon.rainy img { filter: drop-shadow(0 0 10px #00f); }
+
+/* Background circle for floating animation */
+#weather-icon::before {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: rgba(255, 255, 0, 0.1);
+    animation: pulse 2s infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: background 0.5s, opacity 0.5s;
+}
+
+#weather-icon.sunny::before { background: rgba(255, 223, 0, 0.2); opacity: 1; }
+#weather-icon.cloudy::before { background: rgba(200, 200, 200, 0.2); opacity: 1; }
+#weather-icon.rainy::before { background: rgba(0, 123, 255, 0.2); opacity: 1; }
+
+/* =========================================
+   KEYFRAMES
+   Animations for floating and pulsing effects
+   ========================================= */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 0.3; }
+}
+
+/* =========================================
+   RESPONSIVE FONT ADJUSTMENT
+   Reduce font size for condition text and current temp on small screens
+   ========================================= */
+@media (max-width: 540px) {
+    .day-text { /* Condition text */
+        font-size: 1.8rem; /* Smaller font */
+        word-wrap: break-word; /* Ensure long text wraps */
+    }
+
+    .temp-current { /* Current temperature */
+        font-size: 2.5rem; /* Reduce size to fit card */
+    }
+}
