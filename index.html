@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Page title -->
+    <title>Real-Time Weather</title>
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Bootstrap CSS for responsive layout and components -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap Icons library -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Bootstrap JS bundle for interactive components -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Header section: logo, search bar, location button, dark mode toggle -->
+    <header class="app-header">
+        <div class="logo">
+            <img 
+                src="https://cdn-icons-png.flaticon.com/512/414/414969.png" 
+                alt="Cloud with Rainbow Icon" 
+                class="cloud-icon"
+            />
+            Atmosphere
+        </div>
+
+        <!-- Search input and suggestions -->
+        <div class="search-group position-relative">
+            <input
+                type="text"
+                id="city-input"
+                class="form-control search-input"
+                placeholder="Search your location"
+                autocomplete="off"
+                aria-label="Enter city to search weather"
+            />
+            <ul id="suggestions" class="list-group position-absolute"></ul>
+
+            <!-- Button to fetch current location -->
+            <button id="locate-btn" class="btn btn-current-location" aria-label="Use current location for weather">
+                Current location
+            </button>
+        </div>
+
+        <!-- Dark mode toggle button -->
+        <button
+            id="toggle"
+            class="btn-darkmode-toggle"
+            aria-label="Toggle dark mode"
+        >
+            <span id="iconMoon" class="bi bi-moon-fill"></span>
+            <span id="iconSun" class="bi bi-sun-fill" style="display: none"></span>
+        </button>
+    </header>
+
+    <!-- Main content area -->
+    <main>
+        <!-- Main title using semantic h1 for accessibility -->
+        <h1 class="main-title text-center">Real-Time Weather</h1>
+
+        <!-- Weather card section -->
+        <section class="weather-card">
+            <!-- Location badge with icon -->
+            <div class="location-badge">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                <span id="location">--</span>
+            </div>
+
+            <!-- Date and time display -->
+            <div class="date-text">
+                <span id="date">--</span> | <span id="clock">--</span>
+            </div>
+
+            <!-- Weather main information container -->
+            <div class="weather-main">
+                <!-- Left side: condition, feels like, temperature toggle -->
+                <div class="weather-info-left">
+                    <div class="day-text" id="condition">--</div>
+                    <div class="weather-description feels-like" id="feels">
+                        Feels like --
+                    </div>
+                    <button class="temp-toggle" id="toggleTempUnit" aria-label="Toggle temperature unit">
+                        °C
+                    </button>
+                </div>
+
+                <!-- Right side: weather icon and current temperature -->
+                <div class="temp-container">
+                    <div id="weather-icon" aria-hidden="true"></div>
+                    <div class="temp-current" id="currentTemp">--</div>
+                </div>
+            </div>
+
+            <!-- Temperature range for the day -->
+            <div id="temp-range" class="weather-description text-center mt-3">
+                --
+            </div>
+        </section>
+
+        <!-- Highlights section: wind, humidity, UV, visibility, sunrise, sunset -->
+        <section class="highlights-card">
+            <h2 class="highlights-title">Today's Highlights</h2>
+            <div class="highlights-grid">
+                <!-- Individual highlight item template -->
+                <div class="highlight-item">
+                    <div class="highlight-label">
+                        <img class="highlight-icon" src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="Wind Status Icon" />
+                        Wind Status
+                    </div>
+                    <span class="highlight-value" id="wind">--</span>
+                    <span class="highlight-subtext">km/h</span>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="highlight-label">
+                        <img class="highlight-icon" src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="Humidity Icon" />
+                        Humidity
+                    </div>
+                    <span class="highlight-value" id="humidity">--</span>
+                    <span class="highlight-subtext" id="humidity-status">--</span>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="highlight-label">
+                        <img class="highlight-icon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="UV Index Icon" />
+                        UV Index
+                    </div>
+                    <span class="highlight-value" id="uv-index">--</span>
+                    <span class="highlight-subtext" id="uv-condition">--</span>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="highlight-label">
+                        <img class="highlight-icon" src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="Visibility Icon" />
+                        Visibility
+                    </div>
+                    <span class="highlight-value" id="visibility">--</span>
+                    <span class="highlight-subtext" id="visibility-condition">--</span>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="highlight-label">
+                        <img class="highlight-icon" src="https://cdn-icons-png.flaticon.com/512/169/169367.png" alt="Sunrise Icon" />
+                        Sunrise
+                    </div>
+                    <span class="highlight-value" id="sunrise">--</span>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="highlight-label">
+                        <img class="highlight-icon" src="https://cdn-icons-png.flaticon.com/512/169/169360.png" alt="Sunset Icon" />
+                        Sunset
+                    </div>
+                    <span class="highlight-value" id="sunset">--</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Link to custom JavaScript for dynamic weather updates -->
+    <script src="script.js"></script>
+</body>
+</html>
