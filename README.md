@@ -26,8 +26,7 @@ A clean, responsive web application that provides live weather updates, forecast
 
 ## 🚀 Getting Started
 1. **Clone the project:**
-   ```bash
-   git clone [https://github.com/yourusername/weather-app.git](https://github.com/yourusername/weather-app.git)
+   git clone https://github.com/HanNiKyawZin/Weather-App.git
 
 ### 2. API Setup
 - Get API key from [**OpenWeatherMap**](https://openweathermap.org/)
