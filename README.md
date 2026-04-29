@@ -1,71 +1,66 @@
-# 🚀 Forum Blog - Laravel Project
+🌤️ Real-Time Weather Web App
+=============================
 
-A feature-rich forum and blogging web application built with the Laravel framework. This platform enables users to engage in discussions, share content, and manage posts within a responsive, modern interface.
+A clean, responsive web application that provides live weather updates, forecasts, and environmental metrics for any city worldwide.
+
+[🌐 Launch Live Demo](https://weather-realtime.netlify.app/)
+
+---
+  
+✨ Key Features
+--------------
+
+- **Smart Search:** City search with real-time auto-suggestions.
+- **Auto-Location:** Detects current location for instant local weather.
+- **Dynamic UI:** Includes a live clock, dark mode toggle, and animated weather icons.
+- **Detailed Metrics:** High-precision data for UV Index, Humidity, Visibility, and Wind.
+- **Unit Toggle:** Easily switch between Celsius (°C) and Fahrenheit (°F).
+- **Responsive Design:** Optimized for a seamless experience on mobile and desktop.
 
 ---
 
-## 📋 Features
-- **User Authentication:** Secure registration and login system.
-- **Content Management:** Create, edit, and delete forum posts (Full CRUD).
-- **Discussion System:** Interactive comment system for user engagement.
-- **Database Management:** Optimized data handling using Laravel Eloquent ORM.
-- **Responsive Design:** Fully mobile-friendly UI built with Bootstrap.
-- **Cloud Database:** Integrated with Railway for reliable remote database hosting.
+🛠️ Technologies
+----------------
+
+- **Logic:** JavaScript (ES6+)
+- **Styling:** CSS3, Bootstrap 5 & Bootstrap Icons
+- **Data Source:** OpenWeatherMap API
+- **Assets:** Flaticon (Weather Icons)
 
 ---
 
-## 🛠️ Technologies Used
-- **Frontend:** HTML5, CSS3, Bootstrap 5, JavaScript
-- **Backend/Database:** PHP 8+, Laravel Framework
-- **Database:** MySQL (Hosted on Railway)
-- **Build Tools:** Node.js, NPM (Vite/Mix for asset compilation)
+## 🚀 Getting Started
+
+### 1. Clone the project
+git clone https://github.com/yourusername/weather-app.git
+    
+### 2. API Setup
+- Get a free API key from [OpenWeatherMap](https://openweathermap.org/)
+- Add your API key to the apiKey variable in script.js
+
+### 3. Run the project
+- Open index.html in your browser
 
 ---
 
-## 🚀 Installation & Setup
-To run this project locally, follow these steps:
-### 1. **Clone the repository:**
-   git clone https://github.com/HanNiKyawZin/forum_blog.git
+## 📂File Structure
+    ├── **index.html** #Main structure & SEO tags
 
-### 2. Install PHP Dependencies
-composer install
+    ├── **style.css** #Layout, animations & Dark Mode styling
 
-### 3. Install Frontend Dependencies & Build Assets
-npm install
-
-**Then build assets:**
- npm run build
-
-### 4. Environment Configuration
-- Copy .env.example to .env
-- Configure your database credentials (including Railway host details) inside the .env file.
-
-### 5. Initialize Application
-php artisan key:generate
-
-php artisan migrate
-
-### 6. Start the Server
-php artisan serve
-
-Access the app at: http://localhost:8000
-
----
-
-## 📁 Project Architecture
-├── **app/**               # Core Laravel logic (Models, Controllers)
-
-├── **database/**          # Migrations and Seeds
-
-├── **public/**            # Compiled assets (CSS, JS, Images)
-
-├── **resources/**         # Frontend Blade templates & Sass
-
-└── **routes/**            # Web and API routes
+    └── **script.js** #API fetching & DOM manipulation
 
 ---
 
 ## 📜 Credits & License
-- **Framework:** [**Laravel**](https://laravel.com/)
-- **Database Hosting:** [**Railway**](https://railway.app/)
-- **License:** MIT License. Free for personal and educational use.
+
+- **Weather Data:** OpenWeatherMap API
+- **UI Components:** Bootstrap
+- **Icons:** Flaticon
+    
+**License:** Open source. Free for personal and educational use.
+
+---
+    
+## 📍 Default Location
+         **Bangkok**
