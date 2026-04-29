@@ -1,49 +1,61 @@
-# Real-Time Weather Web App
+# 🌤️ Real-Time Weather Web App
 
-A **responsive web app** displaying **real-time weather**, forecasts, and UV index for any city.  
-Includes search suggestions, current location, live clock, temperature toggle (°C/°F), and dark mode.
+A clean, responsive web application that provides live weather updates, forecasts, and environmental metrics for any city worldwide.
 
-> Default city on load: **Bangkok**
-
----
-
-## 🌐 Live Demo
-[👉 View the app on Netlify](https://weather-realtime.netlify.app/)
+[**🌐 Launch Live Demo**](https://weather-realtime.netlify.app/)
 
 ---
 
-## Features
-- City search with auto-suggestions  
-- Current location weather  
-- Live clock and date  
-- Temperature toggle (°C/°F)  
-- Dark mode toggle  
-- Highlights: Wind, Humidity, UV Index, Visibility, Sunrise, Sunset  
-- Responsive layout for all devices  
-- Animated weather icons  
+## ✨ Key Features
+- **Smart Search:** City search with real-time auto-suggestions.
+- **Auto-Location:** Detects current location for instant local weather.
+- **Dynamic UI:** Includes a live clock, dark mode toggle, and animated weather icons.
+- **Detailed Metrics:** High-precision data for UV Index, Humidity, Visibility, and Wind.
+- **Unit Toggle:** Easily switch between Celsius (°C) and Fahrenheit (°F).
+- **Responsive:** Optimized for a seamless experience on mobile and desktop.
 
 ---
 
-## Technologies
-- HTML5, CSS3, JavaScript (ES6)  
-- Bootstrap 5 & Bootstrap Icons  
-- OpenWeatherMap API  
+## 🛠️ Technologies
+- **Logic:** JavaScript (ES6+)
+- **Styling:** CSS3, Bootstrap 5 & Bootstrap Icons
+- **Data:** OpenWeatherMap API
+- **Assets:** Flaticon (Weather Highlights)
 
 ---
 
-## File Structure
-├── index.html       # Main HTML structure  
-├── style.css        # Styles and animations  
-├── script.js        # Weather API & DOM logic  
+## 🚀 Getting Started
+1. **Clone the project:**
+   ```bash
+   git clone [https://github.com/yourusername/weather-app.git](https://github.com/yourusername/weather-app.git)
+
+### 2. API Setup
+- Get API key from [**OpenWeatherMap**](https://openweathermap.org/)
+- Add it in script.js:
+const apiKey = "YOUR_API_KEY";
+
+### 3. Run the project
+Open index.html in your browser
 
 ---
 
-## Credits
-- OpenWeatherMap API – Weather & forecast data  
-- Bootstrap & Bootstrap Icons – UI components  
-- Flaticon – Weather highlight icons  
+## 📁 File Structure
+├── **index.html**          # Application structure & SEO configuration
+├── **style.css**           # Custom styling, themes & animations
+├──**script.js**           # API integration, DOM manipulation & logic
+└── **assets/**            # Images, icons and static resources
 
 ---
 
-## License
-Open source. Free for personal and educational use.
+## 📜 Credits & License
+- OpenWeatherMap API
+- Bootstrap
+- Flaticon
+
+License: Free for personal and educational use.
+
+---
+
+## 📍 Default Location
+Bangkok
+
