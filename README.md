@@ -24,7 +24,7 @@ A feature-rich forum and blogging web application built with the Laravel framewo
 
 ## 🚀 Installation & Setup
 To run this project locally, follow these steps:
-1. **Clone the repository:**
+### 1. **Clone the repository:**
    git clone https://github.com/HanNiKyawZin/forum_blog.git
 
 ### 2. Install PHP Dependencies
@@ -42,6 +42,7 @@ npm install
 
 ### 5. Initialize Application
 php artisan key:generate
+
 php artisan migrate
 
 ### 6. Start the Server
@@ -65,6 +66,6 @@ Access the app at: http://localhost:8000
 ---
 
 ## 📜 Credits & License
--**Framework** [**Laravel**](https://laravel.com/)
-- **Database Hosting** [**Railway**](https://railway.app/)
+- **Framework:** [**Laravel**](https://laravel.com/)
+- **Database Hosting:** [**Railway**](https://railway.app/)
 - **License:** MIT License. Free for personal and educational use.
