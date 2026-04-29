@@ -53,9 +53,13 @@ Access the app at: http://localhost:8000
 
 ## 📁 Project Architecture
 ├── **app/**               # Core Laravel logic (Models, Controllers)
+
 ├── **database/**          # Migrations and Seeds
+
 ├── **public/**            # Compiled assets (CSS, JS, Images)
+
 ├── **resources/**         # Frontend Blade templates & Sass
+
 └── **routes/**            # Web and API routes
 
 ---
